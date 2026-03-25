@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* Colors */
+  --color-primary: #B9FF66;
+  --color-dark: #191A23;
+  --color-grey: #F3F3F3;
+
+  /* Fonts */
+  --font-space: "Space Grotesk", sans-serif;
+
+  /* Border Radius */
+  --radius-3xl: 14px;
+}
