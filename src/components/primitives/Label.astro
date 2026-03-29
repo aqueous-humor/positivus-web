@@ -1,0 +1,40 @@
+---
+interface Props {
+  text: string;
+  variant?: 'primary' | 'dark' | 'light';
+  as: string;
+}
+
+const { variant, as, text } = Astro.props;
+
+const bgClass = variant === "primary" ? "bg-primary" : variant === "dark" ? "bg-dark" : "bg-light";
+const textClass = variant === "dark" ? "text-white" : "text-dark";
+
+const sizeClasses: { [key: string]: string } = {
+  h1: 'text-[60px]',
+  h2: 'text-[40px]',
+  h3: 'text-[30px]',
+  h4: 'text-[20px]',
+};
+
+const Tag = as;
+
+const leading =as === "h1" ? "leading-[1.285]" : as === "h2" ? "leading-[1.28]" : as === "h3" ? "leading-[1.305]" : "leading-[1.295]";
+
+---
+
+<span>
+  <Tag class:list={[
+    bgClass,
+    textClass,
+    sizeClasses[as],
+    leading,
+    "font-medium",
+    "inline px-1.75 py-0 rounded-2xl", 
+    "box-decoration-clone",
+    // "whitespace-pre-wrap"
+  
+  ]}>
+    {text}
+  </Tag>  
+</span>

@@ -1,0 +1,15 @@
+---
+const { variant } = Astro.props;
+console.log(variant)
+---
+
+<button
+  class={`rounded-3xl px-8.75 py-5 transition cursor-pointer
+  ${
+    variant === "primary" ? "bg-primary text-dark hover:opacity-90"
+    : variant === "dark" ? "bg-dark text-white hover:opacity-90"
+      : "border border-dark text-dark hover:bg-dark hover:text-white"
+  }`}
+>
+  <slot />
+</button>

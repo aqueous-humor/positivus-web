@@ -1,0 +1,25 @@
+---
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
+import "../styles/global.css";
+import { Font } from "astro:assets";
+---
+
+<html lang="en">
+  <head>
+    <Font cssVariable="--font-space"/>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/Icon.svg" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Positivus</title>
+  </head>
+  <body class="bg-light text-dark">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
