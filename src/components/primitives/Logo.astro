@@ -1,0 +1,38 @@
+---
+import Icon from "../../../public/favicon.svg";
+
+interface Props {
+    variant?: "dark" | "light";
+    class?: string;
+}
+
+const { variant, class: className } = Astro.props;
+const color = variant === "dark" ? "black" : "white";
+const textClass = variant === "dark" ? "text-dark" : "text-white";
+---
+
+<div class:list={["flex items-center gap-[5.9%] h-full w-full ", className]}>
+    <svg
+        viewBox="0 0 36 36"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-full w-auto shrink-0" 
+        preserveAspectRatio="xMidYMid meet"
+    >
+        <g clip-path="url(#clip0_403_258)">
+            <path
+                d="M17.9986 5.53472L35.5997 0.349121L30.464 18.0001L35.5997 35.6012L17.9986 30.4655L0.347656 35.6012L5.53325 18.0001L0.347656 0.349121L17.9986 5.53472Z"
+                fill={color}></path>
+        </g>
+        <defs>
+            <clipPath id="clip0_403_258">
+                <rect width="36" height="36" fill="white"></rect>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <span class:list={[
+        textClass,
+        "text-h2 font-medium"
+    ]}> Positivus </span>
+</div>

@@ -1,0 +1,72 @@
+---
+import Container from "../primitives/Container.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import ServiceCard from "../ui/ServiceCard.astro";
+---
+
+<section class="py-16 md:py-24">
+  <Container>
+
+    <!-- Header -->
+    <SectionHeader
+      title="Services"
+      subtitle="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+      headingEl="h2"
+      variant="primary"
+    />
+
+    <!-- Grid -->
+    <div class="mt-12 grid md:grid-cols-2 gap-10">
+
+      <ServiceCard
+        title="Search engine optimization"
+        icon="/illustrations/magnifier-web-search-with-elements.svg"
+        variant="primary"
+        bg="grey"
+        alt="Illustration of a magnifying glass searching the web"
+      />
+
+      <ServiceCard
+        title="Pay-per-click advertising"
+        variant="light"
+        icon="/illustrations/selecting-a-value-in-the-browser-window.svg"
+        bg="primary"
+        alt="Illustration of a browser window with a cursor selecting a checkbox"
+      />
+
+      <ServiceCard
+        title="Social Media Marketing"
+        icon="/illustrations/browser-window-with-emoticon-likes-and-stars-around.svg"
+        variant="light"
+        bg="dark"
+        alt="Illustration of a browser window with emoticons representing likes and stars"
+      />
+
+      <ServiceCard
+        title="Email Marketing"
+        variant="primary"
+        icon="/illustrations/sending-messages-from-one-place-to-another.svg"
+        bg="light"
+        alt="Illustration of two locations with arrows indicating message sending"
+      />
+
+      <ServiceCard
+        title="Content Creation"
+        icon="/illustrations/many-browser-windows-with-different-information.svg"
+        variant="light"
+        bg="primary"
+        alt="Illustration of multiple browser windows with different information"
+      />
+
+      <ServiceCard
+        title="Analytics and Tracking"
+        variant="primary"
+        icon="/illustrations/volumetric-analytics-of-different-types-in-web-browsers.svg"
+        bg="dark"
+        alt="Illustration of volumetric analytics in web browsers"
+      />
+
+    </div>
+
+  </Container>
+</section>

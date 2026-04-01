@@ -1,12 +1,13 @@
 ---
-const { title, subtitle } = Astro.props;
+import Label from "../primitives/Label.astro";
+
+const { title, subtitle, headingEl, variant } = Astro.props;
+
 ---
 
-<div class="">
-  <h2 class="text-[32px] md:text-[40px] font-bold leading-tight">
-    {title}
-  </h2>
-  <p class="mt-4 text-[16px] text-gray-600">
+<div class="flex flex-row gap-10 items-center">
+  <Label text={title} variant={variant} as={headingEl} />
+  <p class="max-w-[580px] text-p leading-p">
     {subtitle}
   </p>
 </div>

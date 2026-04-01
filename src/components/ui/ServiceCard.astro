@@ -1,0 +1,26 @@
+---
+import Label from "../primitives/Label.astro";
+import ServiceCardLink from "../primitives/ServiceCardLink.astro";
+
+const { title, bg, variant, icon, alt } = Astro.props;
+
+
+---
+
+<div
+    class={`rounded-4xl p-12.5 flex flex-row border border-dark justify-between shadow-[0px_5px_0px_#191A23]
+  ${
+      bg === "dark"
+          ? "bg-dark text-white"
+          : bg === "grey"
+            ? "bg-grey text-dark"
+            : bg === "primary" ? "bg-primary border border-dark" : "bg-light"
+  }`}
+>
+    <div class="max-w-[221px] min-w-[164px] flex flex-col gap-[93px]">
+        <Label text={title} as="h3" variant={variant}/>
+        <ServiceCardLink href="#" label="Learn more" bg={bg} />
+    </div>
+
+    <img src={icon} alt={alt} class="max-w-[210px] " />
+</div>

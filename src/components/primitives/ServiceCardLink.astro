@@ -1,0 +1,37 @@
+---
+interface Props {
+  bg: string;
+  href: string;
+  label?: string;
+}
+
+const { bg, href, label } = Astro.props;
+
+const bgClasses = {
+  dark: "bg-dark text-primary",
+  light: "bg-white text-dark border border-dark",
+  primary: "bg-primary text-dark",
+};
+
+const ArrowIconClass = bg === "dark" ? "bg-white text-dark border border-dark" : "bg-dark text-primary"
+const textClass = bg === "dark" ? "text-white" : "text-dark";
+---
+
+<a href={href} class="flex items-center gap-3.75 group no-underline regular-text">
+  <div
+    class:list={[
+      "flex items-center justify-center w-10 h-10 rounded-full transition-transform group-hover:rotate-45",
+      ArrowIconClass
+    ]}
+  >
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+      <path
+        d="M1.5 15.5L15.5 1.5M15.5 1.5H5.5M15.5 1.5V11.5"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </div>
+  {label && <span class:list={" transition-transform group-hover:font-semibold"}>{label}</span>}
+</a>

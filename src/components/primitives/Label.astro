@@ -1,10 +1,4 @@
 ---
-interface Props {
-  text: string;
-  variant?: 'primary' | 'dark' | 'light';
-  as: string;
-}
-
 const { variant, as, text } = Astro.props;
 
 const bgClass = variant === "primary" ? "bg-primary" : variant === "dark" ? "bg-dark" : "bg-light";
